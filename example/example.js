@@ -9,7 +9,7 @@
 
 var parser = require('../');
 
-var payload = new Buffer([21, 2, 1, 6, 17, 7, 102, 154, 12, 32, 0, 8, 31, 152, 227, 17, 197, 108, 160, 199, 200, 8]);
+var payload = Buffer.from([21, 2, 1, 6, 17, 7, 102, 154, 12, 32, 0, 8, 31, 152, 227, 17, 197, 108, 160, 199, 200, 8]);
 
 // Parse (little-endian by default)
 var packets = parser.parse(payload);

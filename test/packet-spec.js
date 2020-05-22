@@ -27,10 +27,10 @@ describe("Packet", function() {
     });
 
     it("should parse buffers into the correct kind of string", function() {
-      expect(toOctetStringArray(2, new Buffer([15, 89, 254, 14, 37, 89]), null, "BE")).to.have.a.property("length").to.equal(3);
-      expect(toOctetStringArray(4, new Buffer([15, 89, 254, 14]), null, "LE")).to.have.a.property("length").to.equal(1);
-      expect(toOctetStringArray(8, new Buffer([15, 89, 254, 14, 145, 65, 24, 98]), null, "LE")).to.have.a.property("length").to.equal(1);
-      expect(toOctetStringArray(16, new Buffer([15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98]), null, "LE")).to.have.a.property("length").to.equal(2);
+      expect(toOctetStringArray(2, Buffer.from([15, 89, 254, 14, 37, 89]), null, "BE")).to.have.a.property("length").to.equal(3);
+      expect(toOctetStringArray(4, Buffer.from([15, 89, 254, 14]), null, "LE")).to.have.a.property("length").to.equal(1);
+      expect(toOctetStringArray(8, Buffer.from([15, 89, 254, 14, 145, 65, 24, 98]), null, "LE")).to.have.a.property("length").to.equal(1);
+      expect(toOctetStringArray(16, Buffer.from([15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98, 15, 89, 254, 14, 145, 65, 24, 98]), null, "LE")).to.have.a.property("length").to.equal(2);
     });
 
     it("should make sure packet data is being resolved to the correct type", function() {
